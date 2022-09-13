@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Omnifood Hero Section</title>
+    <title>HTML & CSS Components</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -37,6 +37,7 @@
           url("hero.jpg");
         background-size: cover;
         color: #fff;
+        position: relative;
       }
 
       nav {
@@ -44,7 +45,18 @@
         font-weight: 700;
         display: flex;
         justify-content: space-between;
-        padding:32px 0;
+        padding: 32px 0;
+      }
+
+      .navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .navigation a {
+        color: #fff;
+        text-decoration: none;
       }
 
       .header-container {
@@ -93,14 +105,118 @@
         padding: 96px 0;
         background-color: #f7f7f7;
       }
+      svg {
+        height: 20px;
+        width: 20px;
+        transition: 0.3s;
+      }
+
+      @-webkit-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .dropdown {
+        /* width: 200px; */
+        position: absolute;
+        background-color: #fff;
+        margin-top: 50px;
+        border-radius: 9px;
+        display: flex;
+        flex-direction: column;
+        -webkit-animation: fadeIn 0.5s;
+        animation: fadeIn 0.5s;
+      }
+      .dropdown a {
+        /* justify-content: center; */
+        display: flex;
+        gap: 15px;
+        font-size: 18px;
+        font-weight: 500;
+        color: #444444;
+        padding: 15px 30px;
+        transition: 0.3s;
+      }
+
+      .dropdown a:first-child {
+        border-radius: 10px 10px 0 0;
+      }
+
+      .dropdown a:last-child {
+        border-radius: 0 0 10px 10px;
+      }
+
+      .dropdown a:hover {
+        background-color: #e9ecef;
+      }
+
+      .dropdown a span {
+        color: #6a6a6a;
+        font-weight: 600;
+      }
+
+      .hidden {
+        display: none;
+      }
+      .rotate {
+        transform: rotate(180deg);
+      }
     </style>
   </head>
   <body>
     <header>
       <nav class="container">
         <div>LOGO</div>
-        <div>NAVIGATION</div>
+        <div class="navigation">
+          <a
+            href="#"
+            class="dropdown-toggle"
+            style="display: flex; align-items: center; gap: 3px"
+            >Components
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="dropdown-icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              /></svg
+          ></a>
+          <div class="dropdown hidden">
+            <a href="03-table.html" target="_blank"><span>01</span>Table</a>
+            <a href="02-carousel.html" target="_blank"
+              ><span>02</span>Carousel</a
+            >
+            <a href="01-accordion.html" target="_blank"
+              ><span>03</span>Accordion</a
+            >
+            <a href="04-pagination.html" target="_blank"
+              ><span>04</span>Pagination</a
+            >
+          </div>
+        </div>
       </nav>
+
       <div class="header-container">
         <div class="header-container-inner">
           <h1>A healthy meal delivered to your door, every single day</h1>
@@ -128,4 +244,12 @@
       </div>
     </section>
   </body>
+  <script>
+    document
+      .querySelector(".dropdown-toggle")
+      .addEventListener("click", function () {
+        document.querySelector(".dropdown").classList.toggle("hidden");
+        document.querySelector(".dropdown-icon").classList.toggle("rotate");
+      });
+  </script>
 </html>
