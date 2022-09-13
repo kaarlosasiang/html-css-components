@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*
+        SPACING SYSTEM (px)
+        2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+        FONT SIZE SYSTEM (px)
+        10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+        */
+
+      /* 
+        MAIN COLOR: #087f5b
+        GREY COLOR: #343a40
+        */
+
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* ------------------------ */
+      /* GENERAL STYLES */
+      /* ------------------------ */
+      body {
+        font-family: "Inter", sans-serif;
+        color: #343a40;
+        line-height: 1;
+      }
+
+      .pagination {
+        width: 500px;
+        margin: 100px auto;
+      }
+
+      .pagination-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .icon {
+        stroke: #087f5b;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1px solid #087f5b;
+        padding:11px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: content-box;
+        transition: .2s ease-in;
+      }
+
+      .icon:hover{
+        background-color: #087f5b;
+        stroke: #fff;
+      }
+
+      .pages {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .pages a {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        border-radius: 50%;
+        transition: 0.2s ease-in;
+        cursor: pointer;
+        text-decoration: none;
+        color: #343a40;
+      }
+
+      .active-page,
+      .pages a:hover {
+        background-color: #087f5b;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pagination">
+      <div class="pagination-container">
+        <a href="#" class="btn-left">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5L8.25 12l7.5-7.5"
+            />
+          </svg>
+        </a>
+        <div class="pages">
+          <a href="#">1</a>
+          <a href="#">2</a>
+          <a href="#" class="active-aage">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <span>...</span>
+          <a href="#">23</a>
+        </div>
+        <a href="#" class="btn-right">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8.25 4.5l7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
